@@ -1,0 +1,26 @@
+how to install Angular app --->  npx @angular/cli@16 new my-demo-app-16
+
+how to start Angular app --->    npm start   (in app folder whit package.json!)
+
+generate new component ---->     npm run ng generate component [name]  // npm run ng g c [folder]/[name-element]
+
+generate new service ---->      npm run ng g s [name] 
+
+generate new module  ---->     npm run ng g m [name]        
+
+
+**!! ---- app logic folder & imports ------>  'shared components' import in --> 'core modules' imports in ---> 'app module'
+
+
+install 'BootStrap' ---->  npm install bootstrap  -->  angular.json ---> "styles": [ add link! --> "node_modules/bootstrap/dist/css/bootstrap.min.css", "src/styles.css"]
+
+install 'https://v16.material.angular.io/' --->  npm run ng add @angular/material
+
+
+
+!! install Tailwind CSS whit Angular
+first --->  npm install -D tailwindcss postcss autoprefixer
+second ---> npx tailwindcss init  (to create config file! --> 'tailwind.config.js')
+third --> set to target directory & files working Tailwind!  ===> "content: ["./src/**/*.{html,ts}"],"
+forth ---> put in 'styles.css' --> @tailwind base; @tailwind components; @tailwind utilities;
+
