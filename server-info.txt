@@ -1,0 +1,5 @@
+
+how to run the server:
+1// go in terminal to  write "cd api" + enter ->  write 'node server.js' + enter
+
+

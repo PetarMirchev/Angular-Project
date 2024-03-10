@@ -1,0 +1,26 @@
+{
+  "products": { 
+    "b9bbfb74-99b7-4ccf-bf5a-4e7fd3f2b2aa":{
+      "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+      "product": "nike",
+      "manufacturer": "nikebG",
+      "description": "wdsa sad as dasd asas dadsd assd ",
+      "price": "1",
+      "quantity": "1",
+      "photo": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/5b0981ff-45f8-40c3-9372-32430a62aaea/dunk-high-shoes-npDlgV.png",
+      "_createdOn": 1701682211747,
+      "_id": "b9bbfb74-99b7-4ccf-bf5a-4e7fd3f2b2aa"
+    },
+    "743e3cd7-7fc7-4583-b6ac-3874061b926c": {
+      "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+      "product": "puma",
+      "manufacturer": "PumaBG",
+      "description": "awdasdada dasd asd ",
+      "price": "1",
+      "quantity": "0",
+      "photo": "https://www.buzzsneakers.bg/files/thumbs/files/images/slike-proizvoda/media/390/390025-01/images/thumbs_800/390025-01_800_800px.jpg",
+      "_createdOn": 1701682597582,
+      "_id": "743e3cd7-7fc7-4583-b6ac-3874061b926c"
+    }
+  }
+}
