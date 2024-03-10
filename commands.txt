@@ -1,4 +1,4 @@
-how to install Angular app --->  npx @angular/cli@16 new my-demo-app-16
+how to install Angular app --->  npx @angular/cli@16 new my-demo-app-16  //  npx @angular/cli@17 new my-demo-app-16
 
 how to start Angular app --->    npm start   (in app folder whit package.json!)
 
@@ -12,7 +12,7 @@ generate new module  ---->     npm run ng g m [name]
 **!! ---- app logic folder & imports ------>  'shared components' import in --> 'core modules' imports in ---> 'app module'
 
 
-install 'BootStrap' ---->  npm install bootstrap  -->  angular.json ---> "styles": [ add link! --> "node_modules/bootstrap/dist/css/bootstrap.min.css", "src/styles.css"]
+install 'BootStrap' ---->  npm install bootstrap  -->  angular.json ---> "styles": [ add link! --> "node_modules/bootstrap/dist/css/bootstrap.min.css", "src/styles.css"]  &  "scripts": ["./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"]
 
 install 'https://v16.material.angular.io/' --->  npm run ng add @angular/material
 
@@ -23,4 +23,15 @@ first --->  npm install -D tailwindcss postcss autoprefixer
 second ---> npx tailwindcss init  (to create config file! --> 'tailwind.config.js')
 third --> set to target directory & files working Tailwind!  ===> "content: ["./src/**/*.{html,ts}"],"
 forth ---> put in 'styles.css' --> @tailwind base; @tailwind components; @tailwind utilities;
+
+
+
+
+angular-fontawesome:
+https://www.npmjs.com/package/@fortawesome/angular-fontawesome
+1 ---> npm install @fortawesome/fontawesome-svg-core
+2 ---> npm install @fortawesome/free-solid-svg-icons
+3 ---> npm install @fortawesome/angular-fontawesome@<version>
+
+
 
