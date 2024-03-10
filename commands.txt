@@ -13,6 +13,8 @@ generate new module  ---->     npm run ng g m [name]
 
 
 install 'BootStrap' ---->  npm install bootstrap  -->  angular.json ---> "styles": [ add link! --> "node_modules/bootstrap/dist/css/bootstrap.min.css", "src/styles.css"]  &  "scripts": ["./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"]
+to use 'bootStrap icons'  --->  npm i bootstrap-icons --save    ---->  "styles": [ "node_modules/bootstrap-icons/font/bootstrap-icons.css"]
+
 
 install 'https://v16.material.angular.io/' --->  npm run ng add @angular/material
 
