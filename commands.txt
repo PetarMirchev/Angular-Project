@@ -6,7 +6,12 @@ generate new component ---->     npm run ng generate component [name]  // npm ru
 
 generate new service ---->      npm run ng g s [name] 
 
-generate new module  ---->     npm run ng g m [name]        
+generate new module  ---->     npm run ng g m [name]     
+
+generate guards! ---->  npm run ng generate guard [name] // npm run ng g g [folder]/[name-element]
+
+clean cache  ---->  npm run ng cache clean
+
 
 
 **!! ---- app logic folder & imports ------>  'shared components' import in --> 'core modules' imports in ---> 'app module'

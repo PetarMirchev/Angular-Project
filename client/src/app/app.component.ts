@@ -1,10 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faCoffee, faMagnifyingGlass, faCartShopping, faXmark, faUser, faShop, } from '@fortawesome/free-solid-svg-icons';
+// import {  faMagnifyingGlass, faCartShopping, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+
+
+import { AuthService } from './auth/auth.service'; //for logout functionality
 
 @Component({
   selector: 'app-root',
@@ -14,16 +18,22 @@ import { FormsModule } from '@angular/forms';
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
   ], 
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+
+export class AppComponent  implements OnInit{
   title = 'client';
-  faCoffee = faCoffee;
-  faMagnifyingGlass = faMagnifyingGlass;
-  faCartShopping = faCartShopping;
-  faXmark = faXmark;
-  faUser = faUser;
-  faShop = faShop;
+
+  
+
+  constructor(private auth: AuthService) {}
+
+  ngOnInit(): void {}
+
+  logout(): void {
+    this.auth.logout();
+  }
 }

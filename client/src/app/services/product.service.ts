@@ -1,16 +1,22 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { IBrewery } from './Brewery.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class ProductService {
+  constructor(private http: HttpClient) {}
 
-  // constructor(private http: HttpClient) { }
 
-  // getAllProducts(): Observable<any[]> {
+  getAll(): Observable<IBrewery> {
+    return this.http.get<IBrewery>(`https://api.openbrewerydb.org/breweries`);
+  }
+
+
+  //   getAllProducts(): Observable<any[]> {
   //   const data = this.http.get<any[]>("http://localhost:3030/data/products");
   //   console.log({data});
     
@@ -18,6 +24,13 @@ export class ProductService {
   // };
 }
 
+
+  // getAllProducts(): Observable<any[]> {
+  //   const data = this.http.get<any[]>("http://localhost:3030/data/products");
+  //   console.log({data});
+    
+  //   return data;
+  // };
 
 
 const data1 = [
