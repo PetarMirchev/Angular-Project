@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root',
 })
+
 export class AuthService {
   constructor(private router: Router) {}
 
@@ -30,7 +31,7 @@ export class AuthService {
     
     // statick check of user (if logic)!! in real app need to be check whit back-end server!
     if (email === 'admin@abv.bg' && password === '123') {
-      this.setToken('abcdefghijklmnopqrstuvwxyz');
+      this.setToken('accessToken');
       return of({ name: 'Pepi Mir', email: 'admin@abv.bg' });
     }
 
