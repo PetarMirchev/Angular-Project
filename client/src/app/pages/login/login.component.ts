@@ -21,9 +21,9 @@ export class LoginComponent implements OnInit{
     constructor(private auth: AuthService, private router: Router) {}
  
 
-    ngOnInit(): void {
+    ngOnInit(): void { //! guard if user i login already!
       if (this.auth.isLoggedIn()) {
-        this.router.navigate(['profile']);
+        this.router.navigate(['home']);
       }
     }
 
