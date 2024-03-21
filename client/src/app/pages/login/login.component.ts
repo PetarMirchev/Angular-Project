@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit{
 
     // reactive form for login!
     loginForm = new FormGroup({
-      email: new FormControl('', [Validators.required, emailValidator()]),
+      email: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required]),
     });
 

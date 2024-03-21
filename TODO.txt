@@ -1,0 +1,9 @@
+
+// TO DO list:
+
+1 - finish 'Register form' -- password comparison logic for validation!
+2 - create single product page for inspect (products/{$id})
+3 - add form for create products
+4 - add form for edit products
+4 - make logic for Login & Register Api call (JWT user) !
+5 - set user state (for profile render)

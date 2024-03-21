@@ -1,0 +1,8 @@
+.error{
+    color: red;
+    font-weight: 700;
+}
+
+#sendBtn {
+    color: white !important;
+}
