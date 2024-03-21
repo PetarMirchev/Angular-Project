@@ -30,7 +30,7 @@ export class AuthService {
   login({ email, password }: any): Observable<any> {
     
     // statick check of user (if logic)!! in real app need to be check whit back-end server!
-    if (email === 'admin@abv.bg' && password === '123') {
+    if (email === 'admin@abv.bg' && password === '12345') {
       this.setToken('accessToken');
       return of({ name: 'Pepi Mir', email: 'admin@abv.bg' });
     }
