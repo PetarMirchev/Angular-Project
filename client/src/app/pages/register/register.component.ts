@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../auth/auth.service';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators, FormBuilder } from '@angular/forms';
 import { NgFor, NgIf } from '@angular/common';
+
 
 @Component({
   selector: 'app-register',
@@ -13,15 +14,32 @@ import { NgFor, NgIf } from '@angular/common';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private auth: AuthService, private router: Router) {}
+  constructor(
+    private auth: AuthService, 
+    private router: Router, 
+    private fb: FormBuilder
+  ) {}
 
 
-  registerForm = new FormGroup({
+  registerForm = this.fb.group({
     username: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),
     repeatPassword: new FormControl('', [Validators.required]),
-  });
+  }, { validator: this.comparePasswords });
+
+
+  comparePasswords(control: FormGroup): { passwordsDontMatch: boolean  } | null {
+    const password = control?.get('password')?.value;
+    const repeatPassword = control?.get('repeatPassword')?.value;
+
+    if (password !== repeatPassword) {
+      return { passwordsDontMatch: true };
+    }
+
+    return null;
+  }
+
 
 
   ngOnInit(): void { //! guard if user i login already!

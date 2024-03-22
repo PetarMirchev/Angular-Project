@@ -86,8 +86,8 @@
                                 Password is required!
                             </p>
                     
-                            <p class="error" *ngIf="registerForm.get('repeatPassword')?.errors?.['pattern']">
-                                Passwords don't match!
+                            <p class="error" *ngIf="registerForm.errors?.['passwordsDontMatch']" >
+                                Passwords do not match.
                             </p>
                           </ng-container>
 
