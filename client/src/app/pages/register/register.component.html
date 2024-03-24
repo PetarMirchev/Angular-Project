@@ -10,66 +10,161 @@
                     <h2 class="text-uppercase text-center mb-5">Create an account</h2>
 
 
+
                     <form   [formGroup]="registerForm"  (ngSubmit)="onSend()"  >
 
                         <div class="form-outline mb-4">
-                        <input type="text" 
-                               id="username" 
-                               class="form-control form-control-lg"
-                               name="username"
-                               pattern="^[A-Za-z][A-Za-z0-9_]{7,29}$"
-                               formControlName="username"
-                        />
-                        <label class="form-label" for="username">Your Name</label>
-                            <ng-container *ngIf="registerForm.get('username')?.touched">
-                                <p class="error" *ngIf="registerForm.get('username')?.errors?.['required']">
-                                    Username is required!
-                                </p>
-                        
-                                <p class="error" *ngIf="registerForm.get('username')?.errors?.['pattern']">
-                                    Username characters length must be 8-30 symbols!
-                                </p>
-                            </ng-container>
+                            <input type="text" 
+                                id="username" 
+                                class="form-control form-control-lg"
+                                name="username"
+                                pattern="^[A-Za-z][A-Za-z0-9_]{2,29}$"
+                                formControlName="username"
+                            />
+                            <label class="form-label" for="username">Your Name</label>
+                                <ng-container *ngIf="registerForm.get('username')?.touched">
+                                    <p class="error" *ngIf="registerForm.get('username')?.errors?.['required']">
+                                        Username is required!
+                                    </p>
+                            
+                                    <p class="error" *ngIf="registerForm.get('username')?.errors?.['pattern']">
+                                        Username characters length must be 3-30 symbols!
+                                    </p>
+                                </ng-container>
                         </div>
 
                         <div class="form-outline mb-4">
-                        <input type="email" 
-                               id="email" 
-                               class="form-control form-control-lg"
-                               name="email"
-                               pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-                               formControlName="email" 
-                        />
-                        <label class="form-label" for="email">Your Email</label>
-                            <ng-container *ngIf="registerForm.get('email')?.touched">
-                                <p class="error" *ngIf="registerForm.get('email')?.errors?.['required']">
-                                    Email is required!
-                                </p>
-                        
-                                <p class="error" *ngIf="registerForm.get('email')?.errors?.['pattern']">
-                                    Email is not correct!
-                                </p>
-                            </ng-container>
+                            <input type="email" 
+                                id="email" 
+                                class="form-control form-control-lg"
+                                name="email"
+                                pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                                formControlName="email" 
+                            />
+                            <label class="form-label" for="email">Your Email</label>
+                                <ng-container *ngIf="registerForm.get('email')?.touched">
+                                    <p class="error" *ngIf="registerForm.get('email')?.errors?.['required']">
+                                        Email is required!
+                                    </p>
+                            
+                                    <p class="error" *ngIf="registerForm.get('email')?.errors?.['pattern']">
+                                        Email is not correct!
+                                    </p>
+                                </ng-container>
                         </div>
 
+
+
                         <div class="form-outline mb-4">
-                        <input type="password" 
-                               id="password" 
-                               class="form-control form-control-lg"
-                               name="password" 
-                               pattern="^.{5,}$" 
-                               formControlName="password"
-                        />
-                        <label class="form-label" for="password">Password</label>
-                        <ng-container *ngIf="registerForm.get('password')?.touched">
-                            <p class="error" *ngIf="registerForm.get('password')?.errors?.['required']">
-                                Password is required!
-                            </p>
-                    
-                            <p class="error" *ngIf="registerForm.get('password')?.errors?.['pattern']">
-                                Password need to be 5+ symbols!
-                            </p>
-                          </ng-container>
+                            <input type="text" 
+                                   id="city" 
+                                   class="form-control form-control-lg"
+                                   name="city"
+                                   pattern="^[A-Za-z][A-Za-z0-9_]{3,29}$"
+                                   formControlName="city"
+                            />
+                            <label class="form-label" for="city">Your City</label>
+                                <ng-container *ngIf="registerForm.get('city')?.touched">
+                                    <p class="error" *ngIf="registerForm.get('city')?.errors?.['required']">
+                                        City is required!
+                                    </p>
+                            
+                                    <p class="error" *ngIf="registerForm.get('city')?.errors?.['pattern']">
+                                        City characters length must be 4-30 symbols!
+                                    </p>
+                                </ng-container>
+                        </div>
+
+
+
+
+                            <div class="form-outline mb-4">
+                                <input type="text" 
+                                       id="country" 
+                                       class="form-control form-control-lg"
+                                       name="country"
+                                       pattern="^[A-Za-z][A-Za-z0-9_]{1,29}$"
+                                       formControlName="country"
+                                />
+                                <label class="form-label" for="city">Your Country</label>
+                                    <ng-container *ngIf="registerForm.get('country')?.touched">
+                                        <p class="error" *ngIf="registerForm.get('country')?.errors?.['required']">
+                                            Country is required!
+                                        </p>
+                                
+                                        <p class="error" *ngIf="registerForm.get('country')?.errors?.['pattern']">
+                                            Country characters length must be 2-30 symbols!
+                                        </p>
+                                    </ng-container>
+                            </div>
+
+
+
+                            <div class="form-outline mb-4">
+                                <input type="text" 
+                                       id="img" 
+                                       class="form-control form-control-lg"
+                                       name="img"
+                                       pattern="https?://.*"
+                                       formControlName="img"
+                                />
+                                <label class="form-label" for="city">Your Avatar Image link</label>
+                                    <ng-container *ngIf="registerForm.get('img')?.touched">
+                                        <p class="error" *ngIf="registerForm.get('img')?.errors?.['required']">
+                                            Image link is required!
+                                        </p>
+                                
+                                        <p class="error" *ngIf="registerForm.get('img')?.errors?.['pattern']">
+                                            Link is not correct!
+                                        </p>
+                                    </ng-container>
+                            </div>
+
+
+
+                            <div class="form-outline mb-4">
+                                <input type="text" 
+                                       id="phone" 
+                                       class="form-control form-control-lg"
+                                       name="phone"
+                                       pattern="^[0-9]{7,20}$"
+                                       formControlName="phone"
+                                />
+                                <label class="form-label" for="city">Your Avatar Image link</label>
+                                    <ng-container *ngIf="registerForm.get('phone')?.touched">
+                                        <p class="error" *ngIf="registerForm.get('phone')?.errors?.['required']">
+                                            Phone number is required!
+                                        </p>
+                                
+                                        <p class="error" *ngIf="registerForm.get('phone')?.errors?.['pattern']">
+                                            Phone number is not correct!
+                                        </p>
+                                    </ng-container>
+                            </div>
+
+
+
+
+
+
+                        <div class="form-outline mb-4">
+                            <input type="password" 
+                                id="password" 
+                                class="form-control form-control-lg"
+                                name="password" 
+                                pattern="^.{5,}$" 
+                                formControlName="password"
+                            />
+                            <label class="form-label" for="password">Password</label>
+                                <ng-container *ngIf="registerForm.get('password')?.touched">
+                                    <p class="error" *ngIf="registerForm.get('password')?.errors?.['required']">
+                                        Password is required!
+                                    </p>
+                            
+                                    <p class="error" *ngIf="registerForm.get('password')?.errors?.['pattern']">
+                                        Password need to be 5+ symbols!
+                                    </p>
+                                </ng-container>
                         </div>
 
                         <div class="form-outline mb-4">

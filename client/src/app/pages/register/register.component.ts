@@ -44,6 +44,10 @@ export class RegisterComponent implements OnInit {
   registerForm = this.fb.group({
     username: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required]),
+    city: new FormControl('', [Validators.required]),
+    country: new FormControl('', [Validators.required]),
+    img: new FormControl('', [Validators.required]),
+    phone: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),
     repeatPassword: new FormControl('', [Validators.required]),
   }, { validator: this.comparePasswords });
@@ -72,31 +76,23 @@ export class RegisterComponent implements OnInit {
 
 
   onSend() {//! user is make registration!
-    // TODO -- logic for register user & redirect
-    debugger
-    console.log('click me!');
-  
-
     const user: User = {
       username: this.registerForm.value.username,
       email: this.registerForm.value.email,
       password: this.registerForm.value.password,
-      city: '',
-      country: '',
-      img: '',
-      phone: ''
+      city: this.registerForm.value.city,
+      country: this.registerForm.value.country,
+      img: this.registerForm.value.img,
+      phone: this.registerForm.value.phone,
     };
 
 
     console.log('Sending registration data:', user); // Log data being sent
 
-  // if (this.registerForm.valid) {
-    // console.log({user}, this.registerForm.value.username, this.registerForm.value.email, this.registerForm.value.password);
-    
-    
+  if (this.registerForm.valid) {    
       this.http.post<any>('http://localhost:3030/users/register', user)
       .subscribe(response => {
-        console.log('Registration successful!', response);
+        //console.log('Registration successful!', response);
         const token = JSON.stringify(response);
         // console.log(token);
         
@@ -110,5 +106,5 @@ export class RegisterComponent implements OnInit {
         alert(this.registrationError);
       });
     }
-
+  }
 }
