@@ -34,13 +34,13 @@
 
                         <div class="form-outline mb-4">
                         <input type="email" 
-                               id="form3Example3cg" 
+                               id="email" 
                                class="form-control form-control-lg"
                                name="email"
                                pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
                                formControlName="email" 
                         />
-                        <label class="form-label" for="form3Example3cg">Your Email</label>
+                        <label class="form-label" for="email">Your Email</label>
                             <ng-container *ngIf="registerForm.get('email')?.touched">
                                 <p class="error" *ngIf="registerForm.get('email')?.errors?.['required']">
                                     Email is required!
@@ -54,13 +54,13 @@
 
                         <div class="form-outline mb-4">
                         <input type="password" 
-                               id="form3Example4cg" 
+                               id="password" 
                                class="form-control form-control-lg"
                                name="password" 
                                pattern="^.{5,}$" 
                                formControlName="password"
                         />
-                        <label class="form-label" for="form3Example4cg">Password</label>
+                        <label class="form-label" for="password">Password</label>
                         <ng-container *ngIf="registerForm.get('password')?.touched">
                             <p class="error" *ngIf="registerForm.get('password')?.errors?.['required']">
                                 Password is required!
@@ -74,13 +74,13 @@
 
                         <div class="form-outline mb-4">
                         <input type="password" 
-                               id="form3Example4cdg" 
+                               id="repeatPassword" 
                                class="form-control form-control-lg"
                                name="repeatPassword" 
                                pattern="^.{5,}$" 
                                formControlName="repeatPassword" 
                         />
-                        <label class="form-label" for="form3Example4cdg">Repeat your password</label>
+                        <label class="form-label" for="repeatPassword">Repeat your password</label>
                         <ng-container *ngIf="registerForm.get('repeatPassword')?.touched">
                             <p class="error" *ngIf="registerForm.get('repeatPassword')?.errors?.['required']">
                                 Password is required!

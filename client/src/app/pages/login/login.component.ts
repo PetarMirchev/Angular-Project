@@ -4,11 +4,13 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../auth/auth.service';
 import { emailValidator } from './email-validator';
 import { NgFor, NgIf } from '@angular/common';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, NgFor, NgIf],
+  imports: [ReactiveFormsModule, NgFor, NgIf, HttpClientModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -20,7 +22,11 @@ export class LoginComponent implements OnInit{
       password: new FormControl('', [Validators.required]),
     });
 
-    constructor(private auth: AuthService, private router: Router) {}
+
+    loginError: string = '';
+
+
+    constructor(private auth: AuthService, private router: Router, private http: HttpClient) {}
  
 
     ngOnInit(): void { //! guard if user i login already!
@@ -30,27 +36,34 @@ export class LoginComponent implements OnInit{
     }
 
 
-    onSubmit(): void {
-      //console.log('test aut: ', this.loginForm.value);
+    onSubmit() {
+ 
+      const credentials = {
+        email: this.loginForm.value.email,
+        password: this.loginForm.value.password
+      };
 
-      // if (this.loginForm.invalid) {
-      //   return;
-      // }
 
-      
       if (this.loginForm.valid) {
-        this.auth.login(this.loginForm.value).subscribe(
-          (result) => {
-            console.log(result);
-            
-            // TODO:
-            //this.userService.login(); -- logic to implement
-            this.router.navigate(['/home']);
-          },
-          // (err: Error) => {
-          //   alert(err.message);
-          // }
-        );
-      }
+      this.http.post<any>('http://localhost:3030/users/login', credentials)
+      .subscribe(response => {
+        console.log('Login successful!', response);
+        const token = JSON.stringify(response);
+        // console.log(token);
+        
+         // Handle successful registration
+         localStorage.setItem('token', token); // Store token in local storage
+         this.router.navigate(['/home']); // Redirect to home page
+
+      }, error => {
+        console.error('Login error:', error);
+        this.loginError = 'Invalid email or password.'; // Set user-friendly error message
+        alert('Invalid email or password.');
+      });
+     }
+
     }
+
+   
+
 }
