@@ -1,5 +1,4 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { ProductService } from '../../services/product.service';
 import { Observable, catchError, of } from 'rxjs';
 import { NgFor, NgIf } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -32,7 +31,7 @@ export class HomeComponent implements OnInit {
 
   topForProductsArray: ProductsSchema[] = [];
 
-  constructor(private service: ProductService, private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
   //private service = inject(ProductService); //inject in use 'productService' class in USE!
 
 
