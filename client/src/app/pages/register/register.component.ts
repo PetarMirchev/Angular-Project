@@ -9,8 +9,12 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 // Define an interface for your user data (optional)
 interface User {
-  username?: string; // Optional username
+  city: string;
+  country: string;
   email: string;
+  img: string;
+  phone: string;
+  username: string;
   password: string;
 }
 
@@ -67,30 +71,35 @@ export class RegisterComponent implements OnInit {
   }
 
 
-  onSubmit() {//! user is make registration!
+  onSend() {//! user is make registration!
     // TODO -- logic for register user & redirect
     debugger
     console.log('click me!');
   
-    
+
     const user: User = {
       username: this.registerForm.value.username,
       email: this.registerForm.value.email,
-      password: this.registerForm.value.password
+      password: this.registerForm.value.password,
+      city: '',
+      country: '',
+      img: '',
+      phone: ''
     };
 
 
-  if (this.registerForm.valid) {
-    console.log({user}, 
-      this.registerForm.value.username,
-      this.registerForm.value.email,
-      this.registerForm.value.password);
+    console.log('Sending registration data:', user); // Log data being sent
+
+  // if (this.registerForm.valid) {
+    // console.log({user}, this.registerForm.value.username, this.registerForm.value.email, this.registerForm.value.password);
     
     
       this.http.post<any>('http://localhost:3030/users/register', user)
       .subscribe(response => {
         console.log('Registration successful!', response);
         const token = JSON.stringify(response);
+        // console.log(token);
+        
 
         // Handle successful registration
         localStorage.setItem('token', token); // Store token in local storage
@@ -98,26 +107,8 @@ export class RegisterComponent implements OnInit {
       }, (error) => {
         console.error('Registration error:', error);
         this.registrationError = 'Registration failed. Please try again.';  // Set error message
+        alert(this.registrationError);
       });
     }
-
-
-
-
-    // if (this.registerForm.valid) {
-    //   this.auth.login(this.registerForm.value).subscribe(
-    //     (result) => {
-    //       console.log(result);
-          
-    //       // TODO:
-    //       //this.userService.login(); -- logic to implement
-    //       this.router.navigate(['/home']);
-    //     },
-    //     // (err: Error) => {
-    //     //   alert(err.message);
-    //     // }
-    //   );
-    // }
-  }
 
 }

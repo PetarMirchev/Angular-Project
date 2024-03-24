@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../auth/auth.service';
-import { emailValidator } from './email-validator';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NgFor, NgIf } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
@@ -58,7 +57,7 @@ export class LoginComponent implements OnInit{
       }, error => {
         console.error('Login error:', error);
         this.loginError = 'Invalid email or password.'; // Set user-friendly error message
-        alert('Invalid email or password.');
+        alert(this.loginError);
       });
      }
 
