@@ -1,8 +1,7 @@
-
 // TO DO list:
 
- - make logic for Login & Register Api call (JWT user) !
- - create single product page for inspect (products/{$id})
  - add form for create products
  - add form for edit products
- - set user state (for profile render)
+ - create Edit & Delete on single product page for user
+ - add logic for Delete products
+ - add comment logic for products on users

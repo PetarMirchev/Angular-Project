@@ -24,13 +24,13 @@
                         
                         <div class="col-lg-3 col-md-6 "    *ngFor="let product of productsArray" >
                             <div class="box-shadow">
-                                <div class="card mt-2">
+                                <div class="card mt-2" >
                                     <img   src="{{ product.photo }}"
                                         class="card-img-top img-fluid" alt="image...">
                                     <div class="card-body">
                                         <h5 class="card-title">{{ product.product }}</h5>
                                         <p class="card-text"><span
-                                                class="text-danger fw-semibold me-2">$ {{ product.price }}</span> 
+                                                class="text-danger fw-semibold me-2">$ {{ product.price}}</span> 
                                             
                                         </p>
                                         <div class="row">
@@ -40,11 +40,17 @@
                                                 <span><i class="fa-solid fa-star-half-stroke  m-0" style="color: #f1f50f;"><fa-icon [icon]="faStarHalf"></fa-icon></i></span>
                                                 <span class="text-muted">(25)</span>
                                             </div>
+
+                               
+
                                             <div class="col-6">
-                                                <p class="text-end pb-0 mb-0"><button  
-                                                    class="btn  text-end btn-sm btn-success p-2"><i
-                                                        class="fa-solid fa-cart-plus fs-5"
-                                                        style="color: #0c0d0d;"><fa-icon [icon]="faCartPlus"></fa-icon></i></button></p>
+                                                <p class="text-end pb-0 mb-0">
+                                                    <button class="btn  text-end btn-sm btn-primary p-2">
+                                                        <i class="fa-solid fa-cart-plus fs-5" style="color: #0c0d0d;">
+                                                            <i class="bi bi-eye-fill" (click)="onProductSelected(product._id)"></i>
+                                                        </i>
+                                                    </button>
+                                                </p>
                                             </div>
                                         </div>
                                     </div>

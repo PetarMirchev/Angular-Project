@@ -8,6 +8,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { SingleProductComponent } from './pages/single-product/single-product.component';
 
 export const routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -42,6 +43,9 @@ export const routes: Routes = [
         path: 'products',
         component: ProductsComponent
     },
+
+    { path: 'products/:productId', component: SingleProductComponent }, // Route for product details
+    
     {
         path: 'checkout',
         component: CheckoutComponent

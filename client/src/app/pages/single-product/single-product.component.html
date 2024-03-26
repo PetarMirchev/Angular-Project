@@ -1,0 +1,60 @@
+
+<div class="page-heading align-items-center text-center mt-5" id="top">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="inner-content">
+                    <h2>Product Details Page</h2>
+                    <p class='banner-product-text'>Awesome &amp; beautiful products for You</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+  <!-- Product section-->
+  <section class="py-5">
+    <div class="container px-1 px-lg-1 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="col-md-6">
+                <img class="card-img-top mb-1 mb-md-0" 
+                    src="{{ product.photo }}" 
+                    alt="..." 
+                />
+            </div>
+            <div class="col-md-6">
+                <div class="small mb-1">{{product.manufacturer}}</div>
+                <h1 class="display-5 fw-bolder">{{ product.product }}</h1>
+                <div class="fs-5 mb-5">
+                    <!-- <span class="text-decoration-line-through">$ {{product.price}}</span> -->
+                    <span>$ {{product.price}}</span>
+                </div>
+                <p class="lead">{{ product.description }}</p>
+                <div class="d-flex">
+                    <!-- <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" /> -->
+                    <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                        <i class="bi-cart-fill me-1"></i>
+                        Add to cart
+                    </button>
+                        <!-- Edit/Delete buttons ( Only for creator of this)  --> 
+                            <!-- {userId === product._ownerId && ( 
+                                <div>
+                                    <Link to={`/${productId}/edit`}><button id='edit-button'>Edit</button></Link>
+                                    <button id='delete-button' onClick={() => handleDeleteClick(product.product)}>DELETE</button>
+                                </div>
+                            )} -->
+
+                                <!-- {/* Confirmation Dialog for DELETE */}
+                                    {productToDelete && (
+                                        <div className="confirmation-dialog">
+                                            <p>Are you sure you want to delete {productToDelete}?</p>
+                                            <button className='delBTN-yes' onClick={handleConfirmDelete}>Yes</button>
+                                            <button className='delBTN-no' onClick={handleCancelDelete}>No</button>
+                                        </div>
+                                )} -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

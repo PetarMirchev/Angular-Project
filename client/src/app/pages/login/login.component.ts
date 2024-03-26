@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit{
         // console.log(token);
         
          // Handle successful registration
-         localStorage.setItem('token', token); // Store token in local storage
+         localStorage.setItem('token', token); // Store token + user info data in local storage
          this.router.navigate(['/home']); // Redirect to home page
 
       }, error => {

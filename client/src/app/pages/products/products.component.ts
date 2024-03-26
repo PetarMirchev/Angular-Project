@@ -3,11 +3,13 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 
-import {NgFor, NgIf} from "@angular/common";
+import {DecimalPipe, NgFor, NgIf} from "@angular/common";
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {  faCartPlus, faStar, faStarHalf } from '@fortawesome/free-solid-svg-icons';
 import { Observable, catchError, of } from 'rxjs';
+import { Router } from '@angular/router';
+
 
 
 export interface ProductsSchema {
@@ -28,7 +30,7 @@ export interface ProductsSchema {
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [FontAwesomeModule, HttpClientModule, NgFor, NgIf],
+  imports: [FontAwesomeModule, HttpClientModule, NgFor, NgIf, DecimalPipe],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })
@@ -41,7 +43,7 @@ export class ProductsComponent implements OnInit {
 
   productsArray: ProductsSchema[] = [];
 
-  constructor(private http: HttpClient){ }
+  constructor(private http: HttpClient, private router: Router){ }
 
   getProducts(): Observable<ProductsSchema[]> {
     return this.http.get<ProductsSchema[]>('http://localhost:3030/data/products')
@@ -55,6 +57,11 @@ export class ProductsComponent implements OnInit {
       this.getProducts().subscribe(data => {
         this.productsArray = data as ProductsSchema[]; 
       });
+  }
 
+
+  onProductSelected(_id: string) {
+        this.router.navigate(['/products', _id]); // Navigate to product details route
   }
 }
+  
