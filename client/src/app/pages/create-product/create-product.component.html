@@ -1,0 +1,93 @@
+<div id='create-product-wrapper'>        
+  <div className="container">
+    <div className="row">   
+          <div className="page-title-desc">
+                  <h4 className="title-text">Create/Add New Product</h4>
+          </div>
+    </div>
+  </div>
+</div>
+
+
+<form>
+  <!-- product input -->
+  <div data-mdb-input-init class="form-outline mb-4">
+    <label class="form-label" for="form6Example3">Product name</label>
+    <input type="text" 
+           id="form6Example3" 
+           class="form-control"
+           name="product"                              
+           pattern="^[a-zA-Z0-9\s&'()\-]+$"
+           placeholder="enter product name" 
+           formControlName="product" />  
+  </div>
+
+  <!-- manufacturer input -->
+  <div data-mdb-input-init class="form-outline mb-4">
+    <label class="form-label" for="form6Example4">Manufacturer name</label>
+    <input type="text" 
+           id="form6Example4" 
+           class="form-control"
+           name="manufacturer"                              
+           pattern="^[A-Za-z0-9]{2,16}$"
+           placeholder="nike, puma..." 
+           formControlName="manufacturer" />  
+  </div>
+
+
+  <!-- description input -->
+  <div data-mdb-input-init class="form-outline mb-4">
+    <label class="form-label" for="form6Example7">Description</label>
+    <textarea 
+      class="form-control" 
+      id="form6Example7" 
+      rows="4"
+      name="description"                              
+      pattern="^[a-zA-Z0-9\s.,;:'\"
+      placeholder="product description..." 
+      formControlName="description"></textarea>  
+  </div>
+
+  <!-- Price input -->
+  <div data-mdb-input-init class="form-outline mb-4">
+    <label class="form-label" for="form6Example5">Price</label>
+    <input type="text" 
+            id="form6Example5" 
+            class="form-control"
+            name="price"                              
+            pattern="^[0-9]{1,100000}$"
+            placeholder="price in $" 
+            formControlName="price"
+             />
+  </div>
+
+  <!-- Quantity input -->
+  <div data-mdb-input-init class="form-outline mb-4">
+    <label class="form-label" for="form6Example6">Quantity</label>
+    <input type="text" 
+          id="form6Example6" 
+          class="form-control" 
+          name="quantity"                              
+          pattern="^[0-9]{1,50000}$"
+          placeholder="quantity (pcs)" 
+          formControlName="quantity"/>   
+  </div>
+
+
+  <!-- photo-URL input -->
+  <div data-mdb-input-init class="form-outline mb-4">
+    <label class="form-label" for="form6Example6">Photo URL</label>
+    <input type="text" 
+          id="form6Example6" 
+          class="form-control" 
+          name="photo"                              
+          pattern="https?://.*"
+          placeholder="product photo link" 
+          formControlName="photo"/> 
+  </div>
+
+
+
+  <!-- Submit button -->
+  <button data-mdb-ripple-init type="button" class="btn btn-primary btn-block mb-4">Create New Item</button>
+</form>

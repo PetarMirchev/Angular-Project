@@ -9,6 +9,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SingleProductComponent } from './pages/single-product/single-product.component';
+import { CreateProductComponent } from './pages/create-product/create-product.component';
 
 export const routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -42,6 +43,11 @@ export const routes: Routes = [
     {
         path: 'products',
         component: ProductsComponent
+    },
+
+    {
+        path: 'create',
+        component: CreateProductComponent
     },
 
     { path: 'products/:productId', component: SingleProductComponent }, // Route for product details
