@@ -194,19 +194,11 @@
                             <div class="thumb-content">
                                 <h4>{{ product.product }}</h4>									
                                 <p class="item-price"><b>$ {{ product.price }}</b></p>
-                                <a routerLink="#" class="btn btn-primary">See more!</a>
+                                <a class="btn btn-primary" (click)="onProductSelected(product._id)" >See more!</a>
                             </div>						
                             </div>
                         </div>
 
-                       
-
-                        <div>
-                            <!-- <h2 *ngIf="data.hasError">Unable to call the API</h2> -->
-                            <!-- <p>{{ data?.name }}</p> -->
-                        </div>
-
-                        
 	
 					</div>
 				</div>

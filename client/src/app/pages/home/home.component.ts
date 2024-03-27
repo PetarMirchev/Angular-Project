@@ -2,6 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { Observable, catchError, of } from 'rxjs';
 import { NgFor, NgIf } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 
 
@@ -31,7 +32,7 @@ export class HomeComponent implements OnInit {
 
   topForProductsArray: ProductsSchema[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
   //private service = inject(ProductService); //inject in use 'productService' class in USE!
 
 
@@ -49,5 +50,10 @@ export class HomeComponent implements OnInit {
       // this.topForProductsArray = data.slice(-4); // Take the last 4 elements
     });
   }
+
+
+  onProductSelected(_id: string) {
+    this.router.navigate(['/products', _id]); // Navigate to product details route
+}
 
 }
